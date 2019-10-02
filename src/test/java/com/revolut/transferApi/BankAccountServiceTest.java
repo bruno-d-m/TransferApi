@@ -150,11 +150,11 @@ public class BankAccountServiceTest{
     
     @Test
     void testDeleteExistingId() {
-    	ApiResponse response = bankAccountService.deleteBankAccount(4L);
+    	ApiResponse response = bankAccountService.deleteBankAccount(3L);
     	assertNotNull(response);
     	assertEquals(response.getCode(), 204);
     	assertNotNull(response.getMessage());
-    	ApiResponse expectNotFound = bankAccountService.getBankAccountById(4L);
+    	ApiResponse expectNotFound = bankAccountService.getBankAccountById(3L);
     	assertEquals(expectNotFound.getCode(), 404);
     }
     
